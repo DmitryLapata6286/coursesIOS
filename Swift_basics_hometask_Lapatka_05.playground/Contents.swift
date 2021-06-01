@@ -574,7 +574,23 @@ protocol BusinessTrip {
     func endTrip()
     func expressIndignation()
 }
-extension Artist: BusinessTrip {
+extension Artist: PayableBusinessTrip {
+    var salaryInBusinessTrip: Float {
+        return Float(duration) * daySalary * salaryCoefficient
+    }
+    
+    var salaryCoefficient: Float {
+        if (exp < 3) {
+            return 1
+        }else{
+            if ((3...5).contains(exp)) {
+                return 1.5
+            }else{
+                return 2
+            }
+        }
+    }
+    
     var tripCountry: String {
         get {
             return self.tripCountry
