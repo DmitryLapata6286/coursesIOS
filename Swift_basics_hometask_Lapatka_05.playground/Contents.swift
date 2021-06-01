@@ -580,14 +580,13 @@ extension Artist: PayableBusinessTrip {
     }
     
     var salaryCoefficient: Float {
-        if (exp < 3) {
+        switch exp {
+        case 5...:
+            return 2
+        case 3...5:
+            return 1.5
+        default:
             return 1
-        }else{
-            if ((3...5).contains(exp)) {
-                return 1.5
-            }else{
-                return 2
-            }
         }
     }
     
