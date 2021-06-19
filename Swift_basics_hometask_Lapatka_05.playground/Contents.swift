@@ -576,7 +576,7 @@ protocol BusinessTrip {
 }
 extension Artist: PayableBusinessTrip {
     var salaryInBusinessTrip: Float {
-        return Float(duration) * daySalary * salaryCoefficient
+        return Float(self.duration) * self.daySalary * self.salaryCoefficient
     }
     
     var salaryCoefficient: Float {
