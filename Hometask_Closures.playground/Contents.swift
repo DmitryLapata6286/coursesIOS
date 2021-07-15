@@ -146,13 +146,13 @@ extension Character {
         var weight: Int = 0
         switch self.lowercased() {
             case "a","e","i","o","u":
-                weight = weight + 4
-            case "b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z":
                 weight = weight + 3
-            case "0","1","2","3","4","5","6","7","8","9":
+            case "b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z":
                 weight = weight + 2
+            case "0","1","2","3","4","5","6","7","8","9":
+                weight = weight + 1И
             default:
-                weight = weight + 1
+                break
         }
         return weight
     }
